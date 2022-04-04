@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class CamelCaseTask {
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter your words");
+        String str = input.nextLine();
+
+        String camelCase = str.substring(0,1);
+
+        for (int i = 1; i < str.length(); i++) {
+            if(str.charAt(i-1) == ' '){
+                camelCase+= (""+ str.charAt(i)).toUpperCase(); // when concatinate with "" the char becomes a String, that's why we can turn it into an UpperCase
+            } else {
+                camelCase+=str.charAt(i);
+            }
+
+        }
+        System.out.println(camelCase.replace(" ", ""));
+
+    }
+}
